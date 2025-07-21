@@ -2,7 +2,7 @@
 // #include "Vehicle.cpp"
 #include <iostream>
 #include <string>
-#include "ParkingSpot.cpp"
+#include "ParkingSpot.h"
 #include "CostComputation.cpp"
 using namespace std;
 
@@ -14,12 +14,12 @@ public:
     int price;
     string id;
     int startTime;
-    Vehicle *vehicle;
+    VehicleType vt;
     CostComputation *costComputation;
     ParkingSpot *parkingSpot;
     DurationType durationtype;
 
-    Ticket(CostComputation *costComp, string &i, int startT, Vehicle *vh, ParkingSpot *ps, DurationType dt) : costComputation(costComp), id(i), startTime(startT), vehicle(vh), parkingSpot(ps), durationtype(dt) {}
+    Ticket(CostComputation *costComp, string &i, int startT, VehicleType vh, ParkingSpot *ps, DurationType dt) : costComputation(costComp), id(i), startTime(startT), vt(vh), parkingSpot(ps), durationtype(dt) {}
 
     int getStartTime()
     {
@@ -28,6 +28,6 @@ public:
 
     int getCost(int endTime)
     {
-        return costComputation->calculateCostForTicket(vehicle, endTime - startTime, durationtype);
+        return costComputation->calculateCostForTicket(vt, endTime - startTime, durationtype);
     }
 };

@@ -28,8 +28,8 @@ public:
         parkings.erase(remove(parkings.begin(), parkings.end(), spot), parkings.end());
     }
 
-    void parkVehicle(Vehicle *v, ParkingSpot *spot)
+    void parkVehicle(VehicleType vt, ParkingSpot *spot)
     {
-        spot->parkVehicle(v->vehicleType);
+        spot->parkVehicle(vt);
     }
 };

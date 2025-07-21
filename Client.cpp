@@ -2,17 +2,12 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-// #include "parkingSpot.cpp"
-// #include  "Vehicle.cpp"
-// // #include "VehicleType.cpp"
-// #include "ParkingStrategy.cpp"
 #include "ParkingSpotConcreteClasses.cpp"
-// #include "ParkingSpotManager.cpp"
 #include "Entrance.cpp"
-#include "DefaultParkingStrategy.cpp"
 #include "concreteCostComputationStrategy.cpp"
 #include "Exit.cpp"
-// #include "DurationType.cpp"
+#include "DurationType.h"
+#include "ConcreteParkingStrategy.cpp"
 using namespace std;
 
 // Include all the previously defined classes here or via headers...
@@ -20,9 +15,9 @@ using namespace std;
 int main()
 {
     // Step 1: Create parking spots
-    ParkingSpot *spot1 = new TwoWheelerParkingSpot(0);
-    ParkingSpot *spot2 = new TwoWheelerParkingSpot(1);
-    ParkingSpot *spot3 = new FourWheelerParkingSpot(2);
+    ParkingSpot *spot1 = new TwoWheelerParkingSpot(true);
+    ParkingSpot *spot2 = new TwoWheelerParkingSpot(false);
+    ParkingSpot *spot3 = new FourWheelerParkingSpot(true);
 
     vector<ParkingSpot *> parkingSpots = {spot1, spot2, spot3};
 
@@ -33,18 +28,18 @@ int main()
     Entrance entrance(&manager);
     DefaultParkingStrategy parkingStrategy;
 
-    DefaultStrategy costStrategy;
+    PreminumStrategy costStrategy;
 
     // Step 4: Create a vehicle
     Vehicle *bike = new Vehicle(VehicleType::TWO_WHEELER, "Red", "KA-01-AA-1234", 20);
 
     // Step 5: Book a spot and generate a ticket
-    Ticket *ticket = entrance.bookSpotAndGiveTicket(bike, &costStrategy, &parkingStrategy, 1, DurationType::HOUR);
+    Ticket *ticket = entrance.bookSpotAndGiveTicket(bike->getVehicleType(), &costStrategy, &parkingStrategy, 1, DurationType::HOUR);
 
     if (ticket != nullptr)
     {
         std::cout << "Ticket issued for " << "ticket->name" << " at floor "
-                  << "ticket->floorNo" << ", Price: " << ticket->price << std::endl;
+                  << "ticket->floorNo" << std::endl;
     }
     else
     {

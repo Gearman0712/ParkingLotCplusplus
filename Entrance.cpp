@@ -1,5 +1,4 @@
 #include "ParkingSpotManager.cpp"
-#include "CostComputation.cpp"
 #include "Ticket.cpp"
 class Entrance
 {
@@ -14,16 +13,16 @@ public:
         return parkingSpotManager->findParkingSpot(vt, strategy);
     }
 
-    Ticket *bookSpotAndGiveTicket(Vehicle *v, CostComputation *costComp, ParkingStrategy *startegy, int time, DurationType durationType)
+    Ticket *bookSpotAndGiveTicket(VehicleType vt, CostComputation *costComp, ParkingStrategy *startegy, int time, DurationType durationType)
     {
-        ParkingSpot *spot = findSpace(v->vehicleType, startegy);
+        ParkingSpot *spot = findSpace(vt, startegy);
 
         if (spot && spot->isEmpty())
         {
-            parkingSpotManager->parkVehicle(v, spot);
+            parkingSpotManager->parkVehicle(vt, spot);
             string idn = "1";
 
-            return new Ticket(costComp, idn, time, v, spot, durationType);
+            return new Ticket(costComp, idn, time, vt, spot, durationType);
         }
     }
 };

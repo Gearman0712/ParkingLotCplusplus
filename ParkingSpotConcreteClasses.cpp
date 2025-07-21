@@ -1,14 +1,12 @@
 #include <iostream>
 #include <string>
-#include "ParkingSpot.cpp"
-#include "VehicleType.cpp"
+#include "ParkingSpot.h"
 using namespace std;
 
 class TwoWheelerParkingSpot : public ParkingSpot
 {
 
     bool isOccupied;
-    int price;
     VehicleType vehicleType = VehicleType::TWO_WHEELER;
 
 public:
@@ -36,7 +34,6 @@ class ThreeWheelerParkingSpot : public ParkingSpot
 {
 
     bool isOccupied;
-    int price;
     VehicleType vehicleType = VehicleType::THREE_WHEELER;
 
 public:
@@ -65,7 +62,7 @@ class FourWheelerParkingSpot : public ParkingSpot
 {
 
     bool isOccupied;
-    int price;
+
     VehicleType vehicleType = VehicleType::FOUR_WHEELER;
 
 public:
