@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include "ParkingSpot.h"
-#include "CostComputation.cpp"
+#include "CostComputation.h"
 using namespace std;
 
 class Ticket

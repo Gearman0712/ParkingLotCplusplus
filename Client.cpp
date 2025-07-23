@@ -16,7 +16,7 @@ int main()
 {
     // Step 1: Create parking spots
     ParkingSpot *spot1 = new TwoWheelerParkingSpot(true);
-    ParkingSpot *spot2 = new TwoWheelerParkingSpot(false);
+    ParkingSpot *spot2 = new ThreeWheelerParkingSpot(false);
     ParkingSpot *spot3 = new FourWheelerParkingSpot(true);
 
     vector<ParkingSpot *> parkingSpots = {spot1, spot2, spot3};
@@ -31,7 +31,7 @@ int main()
     PreminumStrategy costStrategy;
 
     // Step 4: Create a vehicle
-    Vehicle *bike = new Vehicle(VehicleType::TWO_WHEELER, "Red", "KA-01-AA-1234", 20);
+    Vehicle *bike = new Vehicle(VehicleType::THREE_WHEELER, "Red", "KA-01-AA-1234", 20);
 
     // Step 5: Book a spot and generate a ticket
     Ticket *ticket = entrance.bookSpotAndGiveTicket(bike->getVehicleType(), &costStrategy, &parkingStrategy, 1, DurationType::HOUR);

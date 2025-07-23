@@ -3,7 +3,7 @@
 // #include "VehicleType.cpp"
 #include <vector>
 #include <algorithm>
-#include "ParkingStrategy.cpp"
+#include "ParkingStrategy.h"
 
 using namespace std;
 

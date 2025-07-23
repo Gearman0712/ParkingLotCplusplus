@@ -1,4 +1,4 @@
-#include "ParkingStrategy.cpp"
+#include "ParkingStrategy.h"
 class DefaultParkingStrategy : public ParkingStrategy
 {
 

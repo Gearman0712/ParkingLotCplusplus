@@ -9,7 +9,7 @@ public:
     virtual bool isEmpty() = 0;
     virtual VehicleType getVehicleType() = 0;
     virtual void parkVehicle(VehicleType vt) = 0;
-    virtual void vacateParkingSpot();
+    virtual void vacateParkingSpot() = 0;
 };
 
 #endif

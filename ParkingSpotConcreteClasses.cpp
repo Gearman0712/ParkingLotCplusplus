@@ -10,7 +10,10 @@ class TwoWheelerParkingSpot : public ParkingSpot
     VehicleType vehicleType = VehicleType::TWO_WHEELER;
 
 public:
-    TwoWheelerParkingSpot(bool isOp) : isOccupied(isOp) {}
+    TwoWheelerParkingSpot(bool isOp) : isOccupied(isOp)
+    {
+        cout << "TWoWheeller Parking spot created" << "\n";
+    }
 
     bool isEmpty()
     {
@@ -37,7 +40,10 @@ class ThreeWheelerParkingSpot : public ParkingSpot
     VehicleType vehicleType = VehicleType::THREE_WHEELER;
 
 public:
-    ThreeWheelerParkingSpot(bool isOp) : isOccupied(isOp) {}
+    ThreeWheelerParkingSpot(bool isOp) : isOccupied(isOp)
+    {
+        cout << "ThreeWheeller Parking spot created" << "\n";
+    }
 
     bool isEmpty()
     {
@@ -66,7 +72,10 @@ class FourWheelerParkingSpot : public ParkingSpot
     VehicleType vehicleType = VehicleType::FOUR_WHEELER;
 
 public:
-    FourWheelerParkingSpot(bool isOp) : isOccupied(isOp) {}
+    FourWheelerParkingSpot(bool isOp) : isOccupied(isOp)
+    {
+        cout << "FourWheeller Parking spot created" << "\n";
+    }
 
     bool isEmpty()
     {

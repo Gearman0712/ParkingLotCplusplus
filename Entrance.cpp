@@ -24,5 +24,7 @@ public:
 
             return new Ticket(costComp, idn, time, vt, spot, durationType);
         }
+
+        return nullptr;
     }
 };

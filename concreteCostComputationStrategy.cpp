@@ -1,4 +1,4 @@
-#include "CostComputation.cpp"
+#include "CostComputation.h"
 
 class DefaultStrategy : public CostComputation
 {

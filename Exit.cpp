@@ -1,14 +1,16 @@
-#include "Ticket.cpp"
+// #include "Ticket.cpp"
 
 class Exit
 {
 public:
     void payPrice(Ticket *ticket, int endT)
     {
-        cout << "Paid" << ticket->getCost(endT);
+        if (ticket != nullptr)
+            cout << "Paid" << ticket->getCost(endT);
     }
     void vacateParkingSpot(Ticket *ticket)
     {
-        ticket->parkingSpot->vacateParkingSpot();
+        if (ticket != nullptr)
+            ticket->parkingSpot->vacateParkingSpot();
     }
 };
